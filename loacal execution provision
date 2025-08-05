@@ -1,0 +1,19 @@
+provider "aws" {
+   region     = "ap-south-1"
+   access_key = ""
+   secret_key = ""
+   
+}
+
+resource "aws_instance" "ec2_example" {
+
+    ami = "ami-0f5ee92e2d63afc18" 
+    instance_type = "t2.micro"
+    tags = {
+        Name = "Terraform EC2"
+    }
+
+  provisioner "local-exec" {
+    command = "touch hello-jhooq.txt"
+  }
+}
