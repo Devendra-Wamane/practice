@@ -51,3 +51,18 @@ resource "aws_key_pair" "deployer" {
   key_name   = "realawskey"
   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMbEq1gZ35vDajd6ue0sfxWGax+OSF7A8VXhSxaqmuUA devendra-wamane@devendra-wamane-LOQ-15IAX9"
 }
+
+
+
+main.tf
+
+provider "aws" {
+   region     = "ap-south-1"
+   access_key = ""
+   secret_key = ""
+   
+}
+
+module "jhooq-webserver-1" {
+  source = ".//module-1"
+}
